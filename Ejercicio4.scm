@@ -1,8 +1,13 @@
-(define (df x)
- (if(zero? (length (x)))
-  (display("done"))
-  ((display(* (car x) (length (x)))) (df(cdr x)))
-  )
-)
+;Autor: Wendell Enamorado
+(define (df lst n)
+    (if(zero? n)
+    (begin
+      (display "done")
+      (car lst))
+    (begin
+      (display (* (car lst) (length lst)))
+      (display "x^")
+      (display (- (length lst) 1))
+      (df (cdr lst) (- n 1)))))
 
-(df(list 1,2,3))
+(df (list 9 8 7) 2)
