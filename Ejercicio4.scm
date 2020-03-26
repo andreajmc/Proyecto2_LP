@@ -1,13 +1,15 @@
 ;Autor: Wendell Enamorado
-(define (df lst n)
-    (if(zero? n)
+(define (df lst)
+    (if(= (length lst) 1)
     (begin
-      (display "done")
-      (car lst))
+      (display (* (car lst) (length lst)))
+      )
     (begin
       (display (* (car lst) (length lst)))
       (display "x^")
       (display (- (length lst) 1))
-      (df (cdr lst) (- n 1)))))
+      (display "")
+      (display " + ")
+      (df (cdr lst)))))
 
-(df (list 9 8 7) 2)
+(df (list 9 8 7))
